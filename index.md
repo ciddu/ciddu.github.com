@@ -1,6 +1,5 @@
 ---
 layout: page
-title: My Blog
 tagline: Random thoughts
 ---
 {% include JB/setup %}
