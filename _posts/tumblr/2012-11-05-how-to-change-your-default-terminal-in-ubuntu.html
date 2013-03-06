@@ -1,0 +1,9 @@
+--- 
+tags: 
+title: How to change your default terminal in ubuntu
+layout: post
+---
+<p>You may be shifting  from the default gnome terminal to  a new terminal like terminator. You may find this line handy.</p>
+<pre><code>gconftool --type string --set /desktop/gnome/applications/terminal/exec YOUR-TERMINAL-NAME</code></pre>
+<p>In this case it is</p>
+<pre><code>gconftool --type string --set /desktop/gnome/applications/terminal/exec terminator</code></pre>
