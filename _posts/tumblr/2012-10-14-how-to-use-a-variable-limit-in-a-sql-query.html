@@ -1,0 +1,11 @@
+--- 
+tags: 
+- mysql
+title: How to use a variable limit in a sql query
+layout: post
+---
+<p>I was trying to write a sql query to find the top 1% users in the database. So, I tried to make the limit variable and tried a query like this</p>
+<pre>SELECT * from user limit count(distinct(user_id))/100 ;</pre>
+<p>MySQL distribution 5.5.24 doesn&#8217;t accept variable limits.</p>
+<p>This is how you write a query with variable limits</p>
+<pre>SELECT * FROM (SELECT user.*, @counter := @counter +1 AS counter FROM (select @counter:=0) AS initvar, user) AS X where counter &lt;= (1/100 * @counter);</pre>
